@@ -26,24 +26,25 @@ public class UserRegisterServlet extends HttpServlet{
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		//將yser_register.jsp表單的東西拉下 新增User
 		String username = req.getParameter("username");		
-		String password = req.getParameter("username");
-		String email = req.getParameter("username");
+		String password = req.getParameter("password");
+		String email = req.getParameter("email");
 		userRegisterService.addUser(username, password, email);
 		
-		//發送送Email 
-		String emailCpmformLink = "http://local:8080/JavaWebCart/email/confirm?username=" + username;
-		emailService.sendEmail(email, emailCpmformLink);
+		// 發送 email
+		String emailConfirmLink = "http://localhost:8080/JavaWebCart/email/confirm?username=" + username;
+		emailService.sendEmail(email, emailConfirmLink);
 		
+		// 準備要給 result.jsp 的資訊
 		String resultTitle = "註冊結果";
 		String resultMessage = "用戶 " + username + " 註冊成功 !";
 		resultMessage += "<p />";
 		resultMessage += "系統已送出驗證信件到 " + email + " 信箱, 請收信並點選[確認]連結";
-		//準備 要給result.jsp 的資訊
+		
+		req.setAttribute("resultTitle", resultTitle);
 		req.setAttribute("resultMessage", resultMessage);
 		
-		//創建完後 就直接回登入
-		req.getRequestDispatcher("/WEB-INF/view/cart/user_login.jsp").forward(req, resp);;
-		
+		// 重導到 result.jsp
+		req.getRequestDispatcher("/WEB-INF/view/cart/result.jsp").forward(req, resp);
 	}
 	
 	

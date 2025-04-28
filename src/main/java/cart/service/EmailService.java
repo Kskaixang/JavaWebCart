@@ -11,9 +11,9 @@ import javax.mail.internet.MimeMessage;
 
 public class EmailService {
 	//測試主程式
-	public static void main(String[] srgs) {
-		new EmailService().sendEmail("wss07715@gmail.com", "http://local:8080/JavaWebCart");
-	}
+	/*public static void main(String[] srgs) {
+		new EmailService().sendEmail("wss07715@gmail.com", "http://localhost:8080/JavaWebCart/");
+	}*/
 	
 	
 	// Google應用程式密碼
