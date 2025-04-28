@@ -1,0 +1,43 @@
+package cart.dao.impl;
+
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import cart.dao.UserRegisterDAO;
+import cart.model.entity.User;
+
+public class UserRegisterDAOimpl extends BaseDao implements UserRegisterDAO{
+
+	@Override
+	public int addUser(User user) {
+		String sql = "insert into user(username, hash_password, hash_salt, email) values(?, ?, ?, ?)";
+		try (PreparedStatement pstmt = conn.prepareStatement(sql)){
+			pstmt.setString(1, user.getUsername());
+			pstmt.setString(2, user.getHashPassword());
+			pstmt.setString(3, user.getHashSalt());
+			pstmt.setString(4, user.getEmail());
+			
+			int rowcouont = pstmt.executeUpdate();
+			return rowcouont;  //若 等於1 表示新增一筆成功
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return 0;
+	}
+	//email  代表驗證成功並修改 commpleted = true   的筆數的狀態
+	@Override
+	public int emailConfirmOk(String username) {
+		String sql = "update user set completed = true where username = ?";
+		
+		try (PreparedStatement pstmt = conn.prepareStatement(sql)){
+			pstmt.setString(1, username);
+			int rowcouont = pstmt.executeUpdate();
+			return rowcouont;  //若 等於1 表示新增一筆成功
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return 0;
+	}
+	
+
+}
