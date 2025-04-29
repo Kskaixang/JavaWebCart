@@ -35,8 +35,8 @@ public class AuthCodeServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		Random random = new Random();
 		//"%04d"  4位數 不足4位 會補0
-		//String authcode = String.format("%04d", random.nextInt(10000)); // 0000~9999 的隨機數
-		String authcode = generateAuthCode();
+		String authcode = String.format("%04d", random.nextInt(10000)); // 0000~9999 的隨機數
+		//String authcode = generateAuthCode();  //老師的 混和英文
 		//getOutputStream非文字的串流輸出
 		ImageIO.write(getAuthCodeImage(authcode), "JPEG", resp.getOutputStream());
 		// 將 authcode 存入到 HttpSession 屬性中

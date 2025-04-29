@@ -6,7 +6,7 @@ import java.sql.SQLException;
 import cart.dao.UserRegisterDAO;
 import cart.model.entity.User;
 
-public class UserRegisterDAOimpl extends BaseDao implements UserRegisterDAO{
+public class UserRegisterDAOImpl extends BaseDao implements UserRegisterDAO{
 
 	@Override
 	public int addUser(User user) {
@@ -21,6 +21,7 @@ public class UserRegisterDAOimpl extends BaseDao implements UserRegisterDAO{
 			return rowcouont;  //若 等於1 表示新增一筆成功
 		} catch (SQLException e) {
 			e.printStackTrace();
+			System.out.println("UserRegisterDAOimpl BUG");
 		}
 		return 0;
 	}

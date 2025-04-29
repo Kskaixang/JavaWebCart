@@ -20,7 +20,6 @@ public class UserListServlet extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		List<UserDTO> userDTOs = userListService.findAllUser();
-		System.out.println("let有收到資訊?" + userDTOs);
 		req.setAttribute("userDTOs", userDTOs);
 		
 		req.getRequestDispatcher("/WEB-INF/view/cart/user_list.jsp").forward(req, resp);

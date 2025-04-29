@@ -3,19 +3,16 @@ package cart.service.impl;
 import java.util.List;
 
 import cart.dao.UserListDAO;
-import cart.dao.impl.UserListDAOimpl;
+import cart.dao.impl.UserListDAOImpl;
 import cart.model.dto.UserDTO;
 import cart.model.entity.User;
 import cart.service.UserListService;
 
 public class UserListServiceImpl implements UserListService{
-	private UserListDAO dao = new UserListDAOimpl();
+	private UserListDAO dao = new UserListDAOImpl();
 
 	@Override
-	public List<UserDTO> findAllUser() {
-		
-		System.out.println("Service有收到資訊?" + dao.findAllUsers());
-		// TODO Auto-generated method stub
+	public List<UserDTO> findAllUser() {		
 		return dao.findAllUsers().stream().map(this::transferToDTO).toList();
 	}
 	

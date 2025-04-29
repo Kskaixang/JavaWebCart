@@ -9,7 +9,7 @@ import java.util.List;
 import cart.dao.UserListDAO;
 import cart.model.entity.User;
 
-public class UserListDAOimpl extends BaseDao implements UserListDAO {
+public class UserListDAOImpl extends BaseDao implements UserListDAO {
 	
 	// 查詢所有使用者
 	@Override
@@ -36,6 +36,7 @@ public class UserListDAOimpl extends BaseDao implements UserListDAO {
 			
 		} catch (SQLException e) {
 			e.printStackTrace();
+			System.out.println("UserListDAOimpl BUG");
 		}
 		
 		return users;

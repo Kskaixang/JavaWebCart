@@ -1,7 +1,7 @@
 package cart.service.impl;
 
 import cart.dao.UserRegisterDAO;
-import cart.dao.impl.UserRegisterDAOimpl;
+import cart.dao.impl.UserRegisterDAOImpl;
 import cart.model.entity.User;
 import cart.service.UserRegisterService;
 import cart.util.HashUtil;
@@ -9,7 +9,7 @@ import cart.util.HashUtil;
 public class UserRegisterServiceImpl implements UserRegisterService{
 
 	//取得UserRegisterDAO物件實體
-	private UserRegisterDAO userRegisterDAO = new UserRegisterDAOimpl();
+	private UserRegisterDAO userRegisterDAO = new UserRegisterDAOImpl();
 	
 	//取得鹽
 	@Override
