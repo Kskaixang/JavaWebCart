@@ -11,7 +11,7 @@ public class UserRegisterServiceImpl implements UserRegisterService{
 	//取得UserRegisterDAO物件實體
 	private UserRegisterDAO userRegisterDAO = new UserRegisterDAOImpl();
 	
-	//取得鹽
+	//取得鹽 
 	@Override
 	public void addUser(String username, String password, String email) {
 		try {

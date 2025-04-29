@@ -9,7 +9,7 @@ import cart.model.entity.Product;
 import cart.service.ProductService;
 
 public class ProductServiceImpl implements ProductService{
-	private ProductDAO dao = new ProductDAOImpl();
+	private ProductDAO dao = new ProductDAOImpl(); 
 	@Override
 	public List<ProductDTO> findAllProducts() {
 		// TODO Auto-generated method stub

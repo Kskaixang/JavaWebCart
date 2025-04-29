@@ -21,7 +21,6 @@ public class ProductDAOImpl extends BaseDao implements ProductDAO{
 			ResultSet rs = stmt.executeQuery(sql)) {
 			while (rs.next()) {
 				Product product = new Product();
-				System.out.println(rs.getInt("product_id") + "看看有沒有東西");
 				product.setProductId(rs.getInt("product_id"));
 				product.setProductName(rs.getString("product_name"));
 				product.setPrice(rs.getInt("price"));

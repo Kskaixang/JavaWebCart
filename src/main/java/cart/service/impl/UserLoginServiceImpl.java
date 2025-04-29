@@ -11,7 +11,7 @@ public class UserLoginServiceImpl implements UserLoginService{
 	private UserLoginDAO userLoginDAO = new UserLoginDAOImpl();
 	@Override
 	public UserDTO login(String username, String password, String authCode, String sessionAuthCode) {
-		if(!authCode.equals(sessionAuthCode)) {
+		if(!authCode.equals(sessionAuthCode)) { 
 			throw new RuntimeException("驗證碼不符");
 		}
 		User user = userLoginDAO.findUserByName(username);
