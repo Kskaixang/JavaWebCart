@@ -9,8 +9,8 @@ import jakarta.servlet.http.HttpFilter;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
-
-@WebFilter(urlPatterns = {"/user/list","/product/list"})
+//"/product/*" 路徑規劃的重要性 讓有共通前綴 來過篩
+@WebFilter(urlPatterns = {"/user/list","/product/*"})
 public class LoginFilter extends HttpFilter{
 
 	@Override

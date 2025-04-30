@@ -2,9 +2,11 @@ package cart.model.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @AllArgsConstructor
+@NoArgsConstructor
 public class ProductDTO {
 	//對應entity 多自訂欄位
 	private Integer productId;

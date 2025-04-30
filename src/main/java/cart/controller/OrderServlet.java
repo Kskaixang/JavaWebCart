@@ -12,19 +12,19 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-@WebServlet("/product/list")
-public class ProductListServlet extends HttpServlet {
-	
+@WebServlet("/product/order")
+public class OrderServlet extends HttpServlet{
 	private ProductService productService = new ProductServiceImpl();
-	
+
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// 取得所有商品
 		List<ProductDTO> productDTOs = productService.findAllProducts();
-		
 		req.setAttribute("productDTOs", productDTOs);
-		req.getRequestDispatcher("/WEB-INF/view/cart/product_list.jsp").forward(req, resp);
-		
+		//將商品重導到訂單頁面
+		req.getRequestDispatcher("/WEB-INF/view/cart/product_order.jsp").forward(req, resp);
 	}
 	
+	
+
 }
