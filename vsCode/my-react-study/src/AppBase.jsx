@@ -1,5 +1,5 @@
-// 變數應用
-function App() { 
+
+function App() {
   return (
     <>
     </>

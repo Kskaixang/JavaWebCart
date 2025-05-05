@@ -84,7 +84,7 @@ id | name | score | pass
 */
   return (
     <>
-      <h1>學生列表</h1>
+      <h4>APP10-學生列表</h4>
       <StudentTable students={students} average={average} />
     </>
   )

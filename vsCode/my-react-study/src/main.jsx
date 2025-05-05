@@ -16,6 +16,19 @@ import App8 from "./App8.jsx";
 import App9 from "./App9.jsx";
 //父組件與子組件應用
 import App10 from "./App10.jsx";
+//組件間的參數傳遞以及 props參數集合
+import App12 from "./App12.jsx";
+//組件間 狀態驅動寫法  import { useState } from "react";
+import App13 from "./App13.jsx";
+//useState 與事件處理 + 展開運算子
+import App15 from "./App15.jsx";
+//課堂練習
+import App16 from "./TodoList2.jsx";
+//js模組化拆分
+import App17 from "./TodoList5.jsx";
+
+//課堂練習
+import App18 from "./Cart.jsx";
 import "./index.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
@@ -28,8 +41,14 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <App5 />
     <App6 />
     <App7 />
-    <App8 />*/}
+    <App8 />
     <App9 />
     <App10 />
+    <App12 />
+    <App13 />
+    <App15 />
+    <App16 />*/}
+    <App17 />
+    <App18 />
   </React.StrictMode>
 );

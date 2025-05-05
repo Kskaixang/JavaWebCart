@@ -40,3 +40,18 @@
 .read-the-docs {
   color: #888;
 }
+
+
+
+/* 一般狀態 */
+li.todo-item {
+  font-size: 18px;
+  color: #333;
+  transition: all 0.2s ease;
+}
+
+/* 已勾選，刪除線 */
+li.todo-item.checked {
+  text-decoration: line-through;
+  color: #aaa;
+}
