@@ -13,6 +13,7 @@ import CartInput from './components/CartInput';
 
 function App() {
 
+
   const [products, setProducts] = useState([
     { id: 1, productName: '蘋果', price: 50 },
     { id: 2, productName: '香蕉', price: 30 }
@@ -62,7 +63,10 @@ function App() {
       <ul>
         {
           products.map((product) => (
-            <li key={product.id} >編號:{product.id} 名稱:{product.productName} 價格: {product.price}
+            <li key={product.id}>
+              -編號: {product.id}
+              <span name="editName">-名稱: {product.productName}</span>
+              -價格: {product.price}
               <button onClick={() => handleProductDelete(product.id)}>  Delete</button>
             </li>
           ))

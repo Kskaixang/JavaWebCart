@@ -29,12 +29,24 @@ import App17 from "./TodoList5.jsx";
 
 //課堂練習
 import App18 from "./Cart.jsx";
-import "./index.css";
+//老師解答
+import App19 from "./Cart2Ans.jsx";
+//老師解答
+import App20 from "./Cart3JSON.jsx";
+//老師解答
+import App21 from "./Cart4Split.jsx";
+
+//bootStrap
+import App22 from "./zztestBootStrap.jsx";
+//import "./index.css";
+
+
+
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   // React.StrictMode嚴格模式 代表app會渲染兩次
   <React.StrictMode>
-    {/* <App />
+    {/*<App />
     <App2 />
     <App3 />
     <App4 /> 
@@ -47,8 +59,12 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <App12 />
     <App13 />
     <App15 />
-    <App16 />*/}
+    <App16 />-
     <App17 />
     <App18 />
+    <App19 />
+    <App20 />
+    <App21 />*/}
+    <App22 />
   </React.StrictMode>
 );

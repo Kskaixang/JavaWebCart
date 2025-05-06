@@ -1,8 +1,17 @@
-// JSX = Javascript + HTML
-// App() 表示 是一個React 組件, 字首字母要大寫
-function App() { 
+//路由 插件導入
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import HelloWorld from "./pages/HelloWorld";
+
+function App() {
   return (
-   <h1>AHellow React</h1>
-  )
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/hello" element={<HelloWorld />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
-export default App
+
+export default App;
